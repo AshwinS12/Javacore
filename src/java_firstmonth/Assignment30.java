@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 public class Assignment30 {
 int i;
 static int j;
-
+int g;
 public class Member{
 	int a;
 	public void add() {
