@@ -16,6 +16,7 @@ public void Stringman(String st) {
 	System.out.println(str.toUpperCase());
 	
 }
+
 public int bubblebinary(int []a,int l , int r , int x) {
 	
 for(int i = 0;i<a.length-1;i++) {
@@ -96,8 +97,6 @@ public int bubinary(int ab[],int l , int r ,int x) {
 		}
 	}
 	return -1;
-	
-	
 }
 
 	public static void main(String[] args) {
