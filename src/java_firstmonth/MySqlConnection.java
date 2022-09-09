@@ -38,7 +38,7 @@ public class MySqlConnection {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(mysqlconnection.getInstance());
+		System.out.println(MySqlConnection.getInstance());
 
 	}
 
