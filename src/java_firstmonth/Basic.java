@@ -1,6 +1,8 @@
 package java_firstmonth;
 
+import java.io.*;
 import java.util.*;
+
 
 public class Basic {
 	
@@ -10,8 +12,8 @@ public class Basic {
 		System.out.println(b);
 	}
 	
-	static int a;
-	int b;
+	//static int a;
+	//int b;
 	
 	private int run;
 	
@@ -25,7 +27,7 @@ public class Basic {
 
 	public void function() {
 		int c = 13;
-		a=20;
+		int a=20;
 		System.out.println(a);
 		System.out.println(c);
 	}
@@ -173,14 +175,136 @@ public class Basic {
 		System.out.println(me.getKey()+" "+me.getValue());
 	}
 	}
-
+public  class scenarios {
+	int a = 0;
+	int b = 1;
+	int c = 0;
+	public void fibonaaci(int n) {
+  	 if(n>0) {
+  		 c = a+b;
+  		 a=b;
+  		 b=c;
+  		 fibonaaci(n-1);
+  	 }
+	}
+	public void repeatedwords(String n) {
+	String[]st = n.split(" ");
+		HashMap<String,Integer> hm = new HashMap<String,Integer>();
+		for(String z:st) {
+			if(hm.containsKey(z)) {
+				hm.put(z,hm.get(z)+1);
+			}else {
+				hm.put(z, 1);
+			}
+			for(Map.Entry<String, Integer>me:hm.entrySet()) {
+				System.out.print(me.getKey()+" : "+me.getValue());
+			}
+		}	
+	}
+	public void palin(int n) {
+		int temp = n;
+		int rem = 0;
+		int sum = 0;
+		while(n>0) {
+			rem = n%10;
+			sum = (sum*10)+rem;
+		}
+     if(temp==sum) {
+    	 System.out.println("Palindrome");
+     }else {
+    	 System.out.println("Not palindrome");
+     }
+	}
+	public void palinstr(String n) {
+		String m = n.toLowerCase();
+		for(int a = 0;a<n.length()/2;a++) {
+			if(m.charAt(a)!=m.charAt(n.length()-a-1)) {
+				System.out.println("Palindrome");
+			}else {
+				System.out.println("not Palindrome");
+			}
+		}
+	}
+	public String revelement(String n) {
+		String rev = " ";
+		
+		StringBuilder sb = new StringBuilder();
+		for(int i = n.length()-1;i>=0;i++) {
+			sb = sb.append(n.charAt(i)+" ");
+			
+		}System.out.println(sb);
+		return rev;
+	}
+	public ArrayList<Integer> primenos(int st, int en){
+		ArrayList<Integer>al = new ArrayList<Integer>();
+		int a = 2;
+		for(int n = st;n<en;n++) {
+			while(a<n/2) {
+				if(n%a==0) {
+			continue;
+				}else {
+					al.add(a);
+				}
+			}
+		}
+		return al;
+	}
+}
+	public static class arrays{
+		public void minmax() {
+			int[] a = {1,2,3,4,5};
+			int min = 0;
+			int max = 0;
+		for(int i = 0;i<a.length;i++) {
+			if(a[i]>max) {
+				max = a[i];
+			}else if(min<a[i]) {
+				min = a[i];
+			}
+			System.out.println(min+" "+ max);
+		}		
+		}
+		
+public void revarray() {
+	
+	int[]b = {1,2,3,4,5};
+	int z = 0;
+	int[] rev = new int[b.length];
+	for(int i=b.length;i>=0;i--) {
+	 rev[z]=b[i];
+	}
+	System.out.println(rev[z]);
+}
+	public void stream() {
+		try {
+			FileInputStream fis = new FileInputStream("path");
+			try (ObjectInputStream ois = new ObjectInputStream(fis)) {
+				ois.readObject();
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+		
+	}
+	
+	
+	
 	
 	public static void main(String[] args) {
 		int d = 123;
 Basic ba = new Basic(1,"Constructor");
-ba.b=21;
+
 System.out.println(d);
-System.out.println(ba.b);
+
 ba.function();
 System.out.println(ba.Multiplication());
 ba.loops();
@@ -189,7 +313,18 @@ System.out.println(ba.getRun());
 ba.arr();
 ba.Collections();
 
+Basic.scenarios bs = ba.new scenarios();
 
+
+bs.fibonaaci(4);
+bs.palin(121);
+bs.repeatedwords("this is this is that only");
+bs.palinstr("ada");
+
+
+
+
+/*
 Scanner scan = new Scanner(System.in);
 System.out.println("Please enter a number");
 int dd = scan.nextInt();
@@ -200,7 +335,7 @@ if(dd<10) {
 	scan.close();
 	
 	
-} 
+} */
 
 }
 }
