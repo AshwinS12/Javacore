@@ -1,20 +1,66 @@
 package core;
 
+
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Typecasting {
 	public Typecasting() {
 		System.out.println("This is a constructor");
-	}
-	public Typecasting(String g) {
-		System.out.println("This is a constructor "+ g);
-	}
-	
+	}	
 int a = 12;
 int b = 24;
 static int c = 36;
 static int d = 48;
+public void function() {
+	class methodinner{
+		public methodinner() {
+			System.out.println("method inner constructor");
+		}
+		public void display() {
+			System.out.println("this is a method inner class"+  c);
+		}
+	}
+	methodinner mi = new methodinner();
+	mi.display();
+}
+public class NonstaticInner implements Comparable<NonstaticInner>{
+	int a;
+	int b;
+	public NonstaticInner(int a,int b) {
+		this.a = a;
+		this.b=b; 
+		System.out.println("Member inner class");
+	}
+public void display() {
+	int z = 9;
+	System.out.println(c+d);
+	System.out.println("Inside member class "+z);
+}
 
+@Override
+public int compareTo(NonstaticInner o) {
+	if (a==o.a) {
+		return 1;
+	}else {
+		return 0;
+	}
+	
+}
+
+
+}
+
+public static class Staticinner{
+	public Staticinner() {
+		System.out.println("inner constructor static");
+	}
+	int z = 10;
+	public void display() {
+		System.out.println(c+d);
+		System.out.println("inner class "+ z);
+	}
+}
 public void numbers() {
 	int e = 45;
 	int f = 60;
@@ -221,13 +267,36 @@ public void sets() {
 public void method() {
 	System.out.println("This is a method");
 }
-public void method(int i) {
-	System.out.println("this is a method "+i);
+
+public void streams() {
+	ArrayList<Integer>al = new ArrayList<Integer>();
+	al.add(2);
+	al.add(4);
+	al.add(6);
+	al.add(8);
+	al.add(2);
+	al.add(4);
+	Collections.sort(al);
+	List<Integer>sq = al.stream().map(x->x*x).collect(Collectors.toList());
+System.out.println(sq);
+Set<Integer>sq1=al.stream().map(x->x*x).collect(Collectors.toSet());
+System.out.println(sq1);
+int sum = al.stream().reduce(0,(ans,i)->ans+i);
+System.out.println(sum);
+
+ArrayList<String>all = new ArrayList<String>();
+all.add("Integer");
+all.add("Character");
+all.add("Boolean");
+all.stream().forEach(y->System.out.println("element: "+y));
+List<String>filter = all.stream().filter(s->s.startsWith("C")).collect(Collectors.toList());
+System.out.println(filter);
 }
-	public static void main(String[] args) {	
+
+
+public static void main(String[] args) {	
 Typecasting tp = new Typecasting();
-Typecasting tp1 = new Typecasting("this");
-tp1.method();
+tp.method();
 tp.numbers();
 System.out.println(c+d);
 System.out.println(tp.a+tp.b);
@@ -244,6 +313,14 @@ tp.loops();
 tp.list();
 tp.queue();
 tp.sets();
+tp.streams();
+Typecasting.Staticinner tss = new Typecasting.Staticinner();
+tss.display();
+  
+Typecasting.NonstaticInner tn = new Typecasting().new NonstaticInner(10,15);
+tn.display();
+tp.function();
+
 	}
 
 }

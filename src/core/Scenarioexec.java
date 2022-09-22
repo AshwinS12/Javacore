@@ -1,6 +1,7 @@
 package core;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Scenarioexec {
 int a = 0;
@@ -166,6 +167,39 @@ int c = 0;
 		}
 	}
 	}
+	public void Squaring() {
+		ArrayList<Integer>num = new ArrayList<Integer>();
+		num.add(2);
+		num.add(2);
+		num.add(4);
+		num.add(6);
+		
+		HashSet<String>hs = new HashSet<String>();
+		hs.add("Integer");
+		hs.add("Index");
+		hs.add("HashSet");
+		
+	/*	ArrayList<Integer>sq = new ArrayList<Integer>();
+		for(int i:num) {
+			sq.add(i*i);
+			for(int j:sq) {
+				System.out.println(j);
+			}
+		} */
+		
+		Set<Integer> sqr = num.stream().map(i->i*i).collect(Collectors.toSet());
+		List<Integer>sort = sqr.stream().sorted().collect(Collectors.toList());
+		List<String> res = hs.stream().filter(x->x.startsWith("I")).collect(Collectors.toList());
+        int p = num.stream().reduce(0,(x,y)->x+y);
+      
+      
+      System.out.println(p);
+		System.out.println(sqr);
+		System.out.println(sort);
+		System.out.println(res);
+	
+	}
+	
 	public static void main(String[] args) {
 		Scenarioexec se = new Scenarioexec();
 		System.out.println(se.factorial(4));
@@ -186,7 +220,7 @@ int c = 0;
 		se.repeatedletters("Dictionaries");
 	System.out.println(se.primenumbers(10,100));
 	se.evenodd(10);
-	
+	se.Squaring();
 	}
 
 }
