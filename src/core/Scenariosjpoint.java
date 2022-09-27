@@ -23,7 +23,7 @@ for(int i=2;i<n/2;i++) {
 	 if(n%i==0) {
 		 flag = true;
 	 }if(!flag) {
-		 System.out.println(n);
+		 System.out.println("Prime is "+n);
 	 }
 	 }
  }
@@ -33,7 +33,7 @@ public void prime(int n) {
 		if(n%i==0) {
 			flag = true;
 		}if(!flag) {
-			System.out.println(n);
+			System.out.println("Prime is "+n);
 		}
 	}
 }
@@ -54,7 +54,7 @@ public void factorial(int n) {
 	for(int i=n-1;i>0;i--) {
 		 temp = temp*i;
 	}
-	System.out.println(temp);
+	System.out.println("Factorial of "+n+" is " +temp);
 }
 public void Armstrong(int n) {
 	int temp = n;
@@ -172,6 +172,7 @@ if(temp==sum) {
 	}
 	arr[j]=f;
 	}
+	System.out.print("Left rotation: ");
 	for(int i = 0;i<arr.length;i++) {
 		System.out.print(arr[i]+" ");
 	}System.out.println();
@@ -184,13 +185,112 @@ if(temp==sum) {
 					System.out.print(ar[j]+" ");
 				}
 			}
-		}System.out.println();
+		}System.out.println("dupes of array");
 	}
 	public void printelements() {
 		int []arr = {1,2,3,4,5};
 		for(int i=0;i<arr.length;i++) {
 			System.out.print(arr[i]+" ");
+		}System.out.println("printing of elements");
+	}
+	public void matrix() {
+		int arr[][] = {{1,2,3},{4,5,6},{7,8,9}};
+		for(int i = 0;i<arr.length;i++) {
+			for(int j = 0;j<arr.length;j++) {
+				System.out.print(arr[i][j]+" ");
+			}System.out.println("printing of matrix");
 		}
+	}
+public void  addmatrix() {
+	int a[][] = {{1,2,3},{3,2,1},{4,5,6}};
+	int b[][]= {{6,5,4},{1,2,3},{1,2,3}};
+	for(int i = 0;i<a.length;i++) {
+		for(int j = 0;j<a.length;j++) {
+			
+		}
+	}
+	for(int i=0;i<b.length;i++) {
+		for(int j=0;j<b.length;j++) {
+			
+		}
+	}
+	int c[][]=new int[a.length][a.length];
+	for(int i=0;i<c.length;i++) {
+		for(int j =0;j<c.length;j++) {
+			c[i][j]=a[i][j]+b[i][j];
+			
+		}
+	}for(int i =0;i<c.length;i++) {
+		for(int j=0;j<c.length;j++) {
+			System.out.print(c[i][j]+" ");
+		}System.out.println("Addition of matrix");
+	}
+}  
+	public void diffmatrix() {
+		int a[][] = {{7,9,5},{3,2,4},{4,5,6}};
+		int b[][]= {{6,5,4},{1,2,3},{1,2,3}};
+		for(int i = 0;i<a.length;i++) {
+			for(int j = 0;j<a.length;j++) {
+				
+			}
+		}
+		for(int i=0;i<b.length;i++) {
+			for(int j=0;j<b.length;j++) {
+				
+			}
+		}
+		int c[][]=new int[a.length][a.length];
+		for(int i=0;i<c.length;i++) {
+			for(int j =0;j<c.length;j++) {
+				c[i][j]=a[i][j]-b[i][j];
+				
+			}
+		}for(int i =0;i<c.length;i++) {
+			for(int j=0;j<c.length;j++) {
+				System.out.print(c[i][j]+" ");
+			}System.out.println("This is diff of matrix");
+		}
+	}
+	public void multimatrix() {
+		int a[][] = {{1,2,3},{3,2,1},{4,5,6}};
+		int b[][]= {{6,5,4},{1,2,3},{1,2,3}};
+		for(int i = 0;i<a.length;i++) {
+			for(int j = 0;j<a.length;j++) {
+				
+			}
+		}
+		for(int i=0;i<b.length;i++) {
+			for(int j=0;j<b.length;j++) {
+				
+			}
+		}
+		int c[][]=new int[a.length][a.length];
+		for(int i=0;i<c.length;i++) {
+			for(int j =0;j<c.length;j++) {
+				c[i][j]=a[i][j]*b[i][j];
+				
+			}
+		}for(int i =0;i<c.length;i++) {
+			for(int j=0;j<c.length;j++) {
+				System.out.print(c[i][j]+" ");
+			}System.out.println("Product of matrix");
+		}
+	}
+	public void compare(int[][]a,int b[][],int n) {
+		boolean flag = true;
+		for(int i = 0;i<n;i++) {
+			for(int j = 0;j<n;j++) {
+		if(a[i][j]!=b[i][j]) {
+			flag =false;
+		}
+		}
+			
+		}if(flag) {
+			System.out.println("Elements are identical");
+		}else {
+			System.out.println("Not identical");
+		}
+	
 	}
 	public static void main(String[] args) {
 Scenariosjpoint jp = new Scenariosjpoint();
@@ -210,7 +310,16 @@ jp.copyarray();
 jp.frequency();
 jp.leftrotation(2);
 jp.dupearr();
-	jp.printelements();
+jp.printelements();
+jp.matrix();	
+jp.addmatrix();	
+jp.diffmatrix();	
+jp.multimatrix();
+int a[][] = {{1,2,3},{3,2,1},{4,5,6}};
+int b[][]= {{1,2,3},{3,2,1},{4,5,6}};
+int n = a.length;
+jp.compare(a, b, n);
 	}
+	
 
 }
