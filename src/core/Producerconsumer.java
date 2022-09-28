@@ -1,8 +1,8 @@
 package core;
-
 import java.util.Random;
 
 public class Producerconsumer {
+	
 public static class Producer{
 	public int materials( ) {
 	 Random rand = new Random();
@@ -12,6 +12,7 @@ public static class Producer{
 	}
 }
 public static class Consumer{
+	
 	public int availability( ) {
 		Random rand = new Random();
 	 int	av= rand.nextInt(10);
@@ -20,6 +21,7 @@ return av;
 	}
 }
 public static class Market{
+	
 	public int stock() {
 		Random rand = new Random();
 		int a= rand.nextInt(5);
@@ -42,7 +44,6 @@ public static class Market{
 	 }else {
 		 System.out.println("Ideal solution");
 	 }
-	 
 	 int total =mater+avail+stc;
 	 double supply = (double)(mater+stc)/(double)total;
 	 double demand = (double)(stc-avail)/(double)total;

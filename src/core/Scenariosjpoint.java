@@ -1,6 +1,6 @@
 package core;
 
-
+import java.util.Arrays;
 
 public class Scenariosjpoint {
 public void fibonnaci(int n) {
@@ -292,6 +292,179 @@ public void  addmatrix() {
 		}
 	
 	}
+	public void totalchars() {
+		String a = "The best of both worlds";
+		
+		int no = 0;
+		for(int i = 0;i<a.length();i++) {
+			if(a.charAt(i)!=' ') {
+					no++;	
+			}	
+			}System.out.println("total characters without spaces: "+no);
+	}
+	public void punctuationcount() {
+		String c = "Hi! how are you doing? All,well.,";
+		int count = 0;
+		for(int i =0;i<c.length();i++) {
+			if(c.charAt(i)=='!'||c.charAt(i)=='?'||c.charAt(i)=='?'||c.charAt(i)==',') {
+				count++;
+			}
+		}System.out.println("No of punctuations is: "+count);
+	}
+	public void chars2strings() {
+		String a = "String one";
+		String b = "String two";
+		//String ap = a.concat(b);
+		int acount = 0;
+		int bcount = 0;
+		int abcount ;
+		for(int i = 0;i<a.length();i++) {
+			if(a.charAt(i)!=' ') {
+				acount ++;
+			}
+			}
+		for(int i = 0;i<b.length();i++) {
+			if(b.charAt(i)!=' ') {
+				bcount ++;
+			}
+			}
+		abcount = acount+bcount;
+		System.out.println("A count: "+acount);
+		System.out.println("B count: "+bcount);
+		System.out.println("Total count: "+abcount);
+		}
+	public void vowconscount(String n) {
+		int vno = 0;
+		int cno = 0;
+		for(int i = 0;i<n.length();i++) {
+			if(n.charAt(i)=='a'||n.charAt(i)=='e'||n.charAt(i)=='i'||n.charAt(i)=='o'||n.charAt(i)=='u') {
+				vno++;
+			}else if(n.charAt(i)>'a'&&n.charAt(i)<='z') {
+				cno++;
+			}
+		}System.out.println("Vowel count: "+vno);
+		System.out.println("Consonant count: "+cno);
+	}
+	public void anagram() {
+		boolean anagram = true;
+		String a = "drag";
+		String b = "grad";
+		char[]a1 = a.toCharArray(); 
+		char[]b1 = b.toCharArray();
+		if(a.length()!=b.length()) {
+			anagram = false;
+		}else {
+	 Arrays.sort(a1);
+	 Arrays.sort(b1);
+	 for(int i = 0; i <a.length();i++) {
+		 if(a1[i]==b1[i]) {
+			anagram = true;
+		 }
+	 }if(anagram) {
+		 System.out.println("anagram");
+	 }
+		}
+		}
+	public int LinearSearch(int arr[],int n) {
+		for(int i = 0;i<arr.length;i++) {
+			if(arr[i]==n) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	public int BinarySearch(int arr[],int l , int r , int x) {
+		if(l<r) {
+			int mid = l+(r-l)/2;
+			if(arr[mid]==x) {
+				return mid;
+			}else if(arr[mid]>x) {
+				return BinarySearch(arr,l,mid-1,x);
+			}else {
+				return BinarySearch(arr,mid+1,r,x);
+			}	
+		}
+		return -1;
+	}
+	public void bubble() {
+		int arr[]= {3,2,1,4,5,6};
+		System.out.println("Bubble sort: ");
+		for(int i = 0;i<arr.length-1;i++) {
+			for(int j = 0;j<arr.length-1-i;j++) {
+				if(arr[j]>arr[j+1]) {
+					int temp = arr[j];
+					arr[j]= arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+			
+	for(int ib:arr) {
+				System.out.print(ib+" ");
+	}		System.out.println();
+	}
+	public void selection() {
+		int arr[]= {5,1,4,2,3};
+		System.out.println("Selection sort: ");
+		for(int i = 0;i<arr.length-1;i++) {
+			int min = i;
+			for(int j = i+1;j<arr.length;j++) {
+				if(arr[min]>arr[j]) {
+					min = j;
+				}
+			}
+			 int temp = arr[min];
+			arr[min] = arr[i];
+			arr[i]= temp;
+		} for(int h:arr) {
+			System.out.print(h+" ");
+		}System.out.println();
+		}
+		
+	public void insert() {
+		int arr[] = {1,4,2,3,5};
+		System.out.println("insertion: ");
+		for(int i = 0;i<arr.length;i++) {
+			int key = arr[i];
+			int j = i-1;
+			while(j>=0&&arr[j]>key) {
+				arr[j+1]=arr[j];
+				j=j-1;
+			}
+				arr[j+1]= key;
+			
+		}for(int k:arr) {
+			System.out.print(k+" ");
+		}System.out.println();
+	}
+	public void conversionString(String n) {
+		int a = Integer.parseInt(n);
+		int b = 150;
+		String h = String.valueOf(b);
+		String g = Integer.toString(b);
+		long ab = Long.parseLong(n);
+		long l = 9993939399L;
+		String i = String.valueOf(l);
+		String j = Long.toString(l);
+		float k = Float.parseFloat(n);
+		
+		System.out.println("Int: "+ a);
+		System.out.println("String: "+ h);
+		System.out.println("String: "+ g);
+		System.out.println("Long: "+ ab);
+		System.out.println("String: "+ i);
+		System.out.println("String: "+ j);
+		System.out.println("Float: "+ k);
+	}
+	public void spiralpattern() {
+		int n = 4;
+		int size = 2*n-1;
+		for(int i = 1;i<=size;i++) {
+			for(int j =1;j<=size;j++) {
+				System.out.print(Math.max(Math.abs(i-n),Math.abs(j-n))+1+" ");
+			}System.out.println();
+		}
+	}
 	public static void main(String[] args) {
 Scenariosjpoint jp = new Scenariosjpoint();
 jp.fibonnaci(4);
@@ -319,7 +492,22 @@ int a[][] = {{1,2,3},{3,2,1},{4,5,6}};
 int b[][]= {{1,2,3},{3,2,1},{4,5,6}};
 int n = a.length;
 jp.compare(a, b, n);
-	}
-	
+jp.totalchars();
+jp.punctuationcount();
+jp.chars2strings();
+jp.vowconscount("This is a String");
+jp.anagram();
+jp.bubble();
+jp.selection();
+jp.insert();
+jp.conversionString("123");
+jp.spiralpattern();
+int arr[]= {1,2,3,4};
+int s = 3;
+System.out.println("the number "+s+" is at "+jp.LinearSearch(arr, s));
+System.out.println("the number "+ s+" is at "+jp.BinarySearch(arr, 0, arr.length-1, s));
 
+
+
+	}
 }

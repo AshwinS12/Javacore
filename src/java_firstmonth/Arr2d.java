@@ -131,10 +131,10 @@ public int binary(int are[],int l, int r,int x) {
 	Arr2d ar = new Arr2d();
 	ar.arr2d();
 	int arr[]= {1,3,2,6,5};
-      ar.bubble(arr);
-      for(int i:arr) {
-    	  System.out.print(i+" ");
-      }System.out.println();
+    //  ar.bubble(arr);
+      //for(int i:arr) {
+    	//  System.out.print(i+" ");
+      //}System.out.println();
     ar.selection(arr);
     for(int i:arr) {
   	  System.out.print(i+" ");
