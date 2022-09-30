@@ -9,6 +9,7 @@ public class Producerconsumer {
 		Consumer co = new Consumer(c, 1);
 		p.start();
 		co.start();
+	
 	}
 }
  class Shop {

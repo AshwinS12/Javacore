@@ -1,12 +1,9 @@
 package core;
 
-
-
 public class Vtalent {
 
 	public static void main(String[] args) {
-		
-Vtalent vt = new Vtalent();
+//Vtalent vt = new Vtalent();
 Training t1 = new Training();
 
 Course cs = new Course(t1,20);
@@ -60,12 +57,12 @@ class Course implements Runnable{
 		
 	}
 	public void run() {
-		String[] arr = {".Net","Java","Devops"};
+		String[] arr = {".net","java","devops"};
 		for(int a = 0;a<arr.length;a++) {
 		int stu = 0;
 		for(int i = 0;i<10;i++) {
 		stu = tr.get();	
-		System.out.println("Course "+ batch+"student count:  "+stu);
+		System.out.println(arr[a]+" Course "+ batch+"student count:  "+stu);
 		}
 	}
 }
@@ -85,7 +82,7 @@ class Trainer extends Thread{
 		for(int a = 0;a<arr.length;a++) {
 		for(int i =0;i<10;i++) {
 			tr.put(i);
-			System.out.println(arr[a]+"Trainer available for "+ i+" hours ");
+			System.out.println(arr[a]+"Trainer available for "+ i+" hours "+av);
 		try {
 			sleep(400);
 		}catch(Exception e) {

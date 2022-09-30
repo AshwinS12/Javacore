@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 public class BufferedReader {
 
 	public static void main(String[] args) {
-		
+		int a = 12;
 		FileOutputStream fos;
 		try {
 			fos = new FileOutputStream("demo.txt");
