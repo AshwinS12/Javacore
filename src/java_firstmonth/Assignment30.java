@@ -96,14 +96,7 @@ public String weather(String n) {
 	}System.out.println("Overs of match is "+ i);
 	return n;
 }
-public void sleep() {
-	 try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e1) {
-			
-			e1.printStackTrace();
-		}
-}
+
 public void innings(String h) {
 	System.out.println("Brz : 200/9");
 	Random rand = new Random();
@@ -178,7 +171,7 @@ j=5;
 	  }
 	  else {
 	as.display();
-         as.sleep();
+       
          as.innings("Ind");
          as.wickets();  
 	}

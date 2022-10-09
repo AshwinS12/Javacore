@@ -1,6 +1,6 @@
 package core;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Scenariosjpoint {
 public void fibonnaci(int n) {
@@ -457,7 +457,7 @@ public void  addmatrix() {
 		System.out.println("Float: "+ k);
 	}
 	public void spiralpattern() {
-		int n = 4;
+		int n = 3;
 		int size = 2*n-1;
 		for(int i = 1;i<=size;i++) {
 			for(int j =1;j<=size;j++) {
@@ -465,6 +465,253 @@ public void  addmatrix() {
 			}System.out.println();
 		}
 	}
+	public void starpattern(int n) {
+	for(int i = 1;i<=n;i++) {
+		for(int j = n;j>=1;j--) {
+			if(j!=i) {
+				System.out.print(j+" ");
+			}else {
+				System.out.print("X"+" ");
+			}
+		}System.out.println("");
+	}
+	}
+	public void starpatterns(int n) {
+		int j ;
+		for(int i = 1;i<=n;i++) {
+			for( j = 1;j<=n;j++) {
+			if(i==j) {
+				System.out.print("*");
+			}else {
+				System.out.print("0");
+			}
+			}j--;
+			System.out.println("*");
+			while(j>1) {
+				if(i==j) {
+					System.out.print("*");
+				}else {
+					System.out.print("0");
+				}j--;
+				
+			}
+			}System.out.println(" ");
+	}
+	public void pattern(int n) {
+		for(int i=1;i<=n;i++) {
+			for(int j = 1;j<=n;j++) {
+				System.out.print(i*j+" ");
+			}
+		System.out.println();
+		}
+}
+	public void patterns(int n) {
+		int i,j;
+		for(i = 1;i<n;i++) {
+			for(j=1;j<=n/2;j++) {
+				if(i==j) {
+					System.out.print(j);
+				}else if(i>4&&j==n-i) {
+					System.out.print(j);
+				}else {
+					System.out.print(" ");
+				}
+			}
+			j=j-2;
+			while(j>0) {
+				if(i==j) {
+					System.out.print(j);
+				}else if(i>(n/2)&&j==(n-i)) {
+					System.out.print(j);
+				}else {
+					System.out.print(" ");
+				}
+				j--;
+			}
+		System.out.println("");
+	}
+		}
+public void Random() {
+	Random rd = new Random();
+	int a = rd.nextInt(5);
+	System.out.println(a);
+	int h = (int)Math.random();
+	System.out.println(h);
+}
+public void star() {
+	for(int i = 0;i<5;i++) {
+		for(int j = 0;j<i;j++) {
+			System.out.print("*");
+		}System.out.println();
+	}
+	for(int i = 5;i>+0;i--) {
+		for(int j =0;j<i;j++) {
+			System.out.print("*");
+		}System.out.println();
+	}
+	System.out.println();
+	for(int i = 0;i<5;i++) {
+		for(int j = 2*(5-i);j>0;j--) {
+			System.out.print(" ");
+		}
+		for(int j = 0;j<=i;j++) {
+			System.out.print("* ");
+		}System.out.println();
+	}System.out.println();
+	for(int i = 0;i<5;i++) {
+		for(int j=5-i;j>0;j--) {
+			System.out.print(" ");
+		}for(int j =0;j<=i;j++) {
+			System.out.print("* ");
+		}System.out.println();
+	}
+	
+}
+public void Technumber(int n) {
+	int digits = 0;
+	while(n>0) {
+		digits++;
+		n=n/10;
+	}
+	if(digits%2==0) {
+		int temp = n;
+		int f = temp%(int)Math.pow(10, digits/2);
+		int s = temp/(int)Math.pow(10, digits/2);
+		int sq = (f+s)*(f+s);
+		if(n==sq) {
+			System.out.println("Technumber");
+		}
+	}
+}
+public void reversearr() {
+	int ar[]= {1,2,3,4,5};
+	System.out.println("Original Array: ");
+	for(int i = 0;i<=ar.length-1;i++) {
+		System.out.print(ar[i]+" ");
+	}
+	System.out.println();
+	System.out.println("Reverse Array: ");
+	for(int i=ar.length-1;i>=0;i--) {
+		System.out.print(ar[i]+" ");
+	}System.out.println();
+}
+public void Ascii(){
+	char a = 'A';
+	char b = 'B';
+	int ch1 = a;
+	int ch2 = b;
+	System.out.println(ch1+""+ch2+"");
+Integer c = ch1;
+Integer d = ch2;
+System.out.println(c.equals(d));
+}
+public static boolean Fascinating(int num) {
+	int [] freq = new int[10];
+	String res = num +""+num*2+""+num*3;
+	for(int i = 0;i<res.length();i++) {
+		int digit = res.charAt(i)-'0';
+		if(freq[digit]>0&&digit!=0) {
+			return false;
+		}else {
+			freq[digit]++;
+		}
+	}
+		for(int i=1;i<freq.length;i++) {
+			if(freq[i]==0) {
+				return false;
+			}
+		}
+			return true;	
+	}
+public void keith(int n) {
+	int temp = n;
+	String h = Integer.toString(n);
+	int l = h.length();
+	int[]arr = new int[n];
+	int i; 
+	int sum;
+	for(i=l-1;i>=0;i--) {
+		arr[i]=temp%10;
+		temp = temp/10;
+	}
+	i =l;sum = 0;
+	while(sum<n) {
+		sum = 0;
+		for(int j =1;j<=l;j++) {
+			sum = sum+arr[i-j];
+		}
+		arr[i]=sum;
+		i++;
+	}
+	if(sum==n) {
+		System.out.println("keith");
+	}
+}
+public void neon(int n) {
+	int sq = n*n;
+	int sum=0;
+	while (sq!=0) {
+		int rev = sq%10;
+		sum = sum+rev;
+		sq = sq/10;
+	}if(n==sum) {
+		System.out.println(n+" neon");
+	}
+}
+public void spynum(int n) {
+	int sum=0;
+	int product=1;
+	int temp = n;
+	while(temp>0) {
+		int rem = temp%10;
+		sum = sum+rem;
+		product = product*rem;
+		temp = temp/10;
+	}if(sum==product) {
+		System.out.println(n+" is spy number");
+	}
+}
+public void oddevenarray() {
+	int []arr = {1,2,3,4,5,6};
+	for(int i =0;i<arr.length;i=i+2) {
+		System.out.print("even position "+arr[i]);
+	}System.out.println();
+	for(int i =1;i<arr.length;i+=2) {
+		System.out.print("odd position "+arr[i]);
+	}System.out.println();
+}
+public void largest() {
+	int[]arr = {10,30,22,45,90,21,2};
+	int largest = arr[0];
+	int smallest=arr[0];
+  for(int i =0;i<arr.length;i++) {
+	  if(arr[i]>largest) {
+		  largest=arr[i];
+	  }
+	  if(arr[i]<smallest) {
+		smallest =arr[i];
+	  }
+  }System.out.println("Largest no is "+largest);
+System.out.println("smallest is "+smallest);
+}
+public void triangular() {
+	int arr[][]= {{1,2,3},{8,6,4},{4,5,6}};
+	int rows = arr.length;
+	int cols = arr[0].length;
+	if(rows!=cols) {
+		System.out.println("should be sq");
+	}else {
+		for(int i = 0;i<rows;i++) {
+			for(int j=0;j<cols;j++) {
+				if(j>i) {
+					System.out.print(0+" ");
+				}else {
+					System.out.print(arr[i][j]+" ");
+				}
+			}System.out.println();
+		}
+	}
+}
 	public static void main(String[] args) {
 Scenariosjpoint jp = new Scenariosjpoint();
 jp.fibonnaci(4);
@@ -502,12 +749,29 @@ jp.selection();
 jp.insert();
 jp.conversionString("123");
 jp.spiralpattern();
+jp.starpattern(5);
+jp.starpatterns(5);
+jp.pattern(4);
+jp.patterns(6);
+jp.Random();
+jp.star();
+jp.Technumber(2025);
+jp.reversearr();
+jp.Ascii();
+
 int arr[]= {1,2,3,4};
 int s = 3;
 System.out.println("the number "+s+" is at "+jp.LinearSearch(arr, s));
 System.out.println("the number "+ s+" is at "+jp.BinarySearch(arr, 0, arr.length-1, s));
-
-
-
+boolean ans = Fascinating(192);
+if(ans) {
+	System.out.println("is fascinating");
+}
+jp.keith(75);
+jp.neon(9);
+jp.spynum(123);
+jp.oddevenarray();
+jp.largest();
+jp.triangular();
 	}
 }
