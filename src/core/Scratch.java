@@ -79,15 +79,15 @@ public void Lists() {
 	while(it.hasNext()) {
 		System.out.print(it.next());
 	}System.out.println();
-	LinkedList<String>ll = new LinkedList<String>();
+/*	LinkedList<String>ll = new LinkedList<String>();
 	ll.add("This");
 	ll.addFirst("Yes!");
 	ll.addLast("!");
 	ll.add("is");
 	System.out.println("LinkedList: ");
 	for(String z:ll) {
-		System.out.print(z+" ");
-	}System.out.println();
+		System.out.print(z+" "); 
+	}System.out.println(); */
 	Integer ar[]= {1,2,3,4};Integer arr[] = {4,3,2,1};
 	int a = 12;Integer b = a; int c = Integer.valueOf(b);
 	System.out.println("Wrapper class: "+b+""+c);

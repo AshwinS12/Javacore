@@ -1,126 +1,130 @@
 package core;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Scenariosjpoint {
-public void fibonnaci(int n) {
-	System.out.print("fibonnaci: ");
-	int a = 0,b = 1;
-	int c =0;
-	while(n>=0) {
-	 c = a+b;
-		a=b;
-		b=c;
-		n=n-1;
-		
-		System.out.print(c+" ");
-	}System.out.println();
-}
-public void primenumber(int n) {
+import org.w3c.dom.Node;
 
-for(int i=2;i<n/2;i++) {
-	boolean flag = false;
-	 if(n%i==0) {
-		 flag = true;
-	 }if(!flag) {
-		 System.out.println("Prime is "+n);
-	 }
-	 }
- }
-public void prime(int n) {
-	boolean flag = false;
-	for(int i=2;i<Math.sqrt(n);i++) {
-		if(n%i==0) {
-			flag = true;
-		}if(!flag) {
-			System.out.println("Prime is "+n);
+public class Scenariosjpoint {
+	public void fibonnaci(int n) {
+		System.out.print("fibonnaci: ");
+		int a = 0,b = 1;
+		int c =0;
+		while(n>=0) {
+			c = a+b;
+			a=b;
+			b=c;
+			n=n-1;
+
+			System.out.print(c+" ");
+		}System.out.println();
+	}
+	public void primenumber(int n) {
+
+		for(int i=2;i<n/2;i++) {
+			boolean flag = false;
+			if(n%i==0) {
+				flag = true;
+			}if(!flag) {
+				System.out.println("Prime is "+n);
+			}
 		}
 	}
-}
-public void palindrome(int n) {
-	int rev = 0;
-	int temp = n;
-	int rem=0;
-	while(n>0) {
-		rem = n%10;
-		rev = (rev*10)+rem;
-		n=n/10;
-	}if(temp==rev) {
-		System.out.println("Palindrome");
+	public void prime(int n) {
+		boolean flag = false;
+		for(int i=2;i<Math.sqrt(n);i++) {
+			if(n%i==0) {
+				flag = true;
+			}if(!flag) {
+				System.out.println("Prime is "+n);
+			}
+		}
 	}
-}
-public void factorial(int n) {
-	int temp = n;
-	for(int i=n-1;i>0;i--) {
-		 temp = temp*i;
+	public void palindrome(int n) {
+		int rev = 0;
+		int temp = n;
+		int rem=0;
+		while(n>0) {
+			rem = n%10;
+			rev = (rev*10)+rem;
+			n=n/10;
+		}if(temp==rev) {
+			System.out.println("Palindrome");
+		}
 	}
-	System.out.println("Factorial of "+n+" is " +temp);
-}
-public void Armstrong(int n) {
-	int temp = n;
-	int rem = 0;
-	int arm = 0;
-	while(n>0) {
-		rem = n%10;
-		arm = (rem*rem*rem)+arm;
-		n=n/10;
-	}if(arm==temp) {
-		System.out.println("Armstrong");
+	public void factorial(int n) {
+		int temp = n;
+		for(int i=n-1;i>0;i--) {
+			temp = temp*i;
+		}
+		System.out.println("Factorial of "+n+" is " +temp);
 	}
-}
-public void reverse(int n) {
-	int temp=n;
-	int rem=0;
-	int rev=0;
-	while(n>0) {
-		rem = n%10;
-		rev = (rev*10)+rem;
-		n=n/10;
-	}System.out.println("Reverse of "+ temp + " is "+rev);
-}
-public void numbertoword(int n) {
-	int un = n%10;
-	int ten = n/10;
-	int te = ten%10;
-	//int hun = n/100;
-	int hu = n/100;
-	
-	String unit [] = {"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"};
-	String tens[] = {"","Ten","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"};
-	String hund = "Hundred";
-	if(n<1) {
-		System.out.println("not supported");
-	}else if(n<20) {
-		System.out.println(unit[n]);
-	}else if(n>20&&n<100) {
-		System.out.println(tens[te]+ unit[un]);
-	}else if (n>=100 && n<500) {
-		System.out.println(unit[hu]+hund+tens[te]+ unit[un]);
+	public void Armstrong(int n) {
+		int temp = n;
+		int rem = 0;
+		int arm = 0;
+		while(n>0) {
+			rem = n%10;
+			arm = (rem*rem*rem)+arm;
+			n=n/10;
+		}if(arm==temp) {
+			System.out.println("Armstrong");
+		}
 	}
-}
-public void automorphic(int n) {
-int sq =(n*n);
- int div = sq%100;
- if(div==n) {
-	 System.out.println("Automorphic");
- }
-}
-public void peterson(int n) {
- 
-int sum = 0;
-int temp = n;
-while(n>0) {
-	int fact = 1;
-	int rem = n%10;
-	for(int i=1;i<=rem;i++) {
-	fact = fact*i;
-	}n=n/10;
-	sum = sum+fact;
-}System.out.println(sum);
-if(temp==sum) {
-	System.out.println("peterson");
-}
-}
+	public void reverse(int n) {
+		int temp=n;
+		int rem=0;
+		int rev=0;
+		while(n>0) {
+			rem = n%10;
+			rev = (rev*10)+rem;
+			n=n/10;
+		}System.out.println("Reverse of "+ temp + " is "+rev);
+	}
+	public void numbertoword(int n) {
+		int un = n%10;
+		int ten = n/10;
+		int te = ten%10;
+		//int hun = n/100;
+		int hu = n/100;
+
+		String unit [] = {"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"};
+		String tens[] = {"","Ten","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"};
+		String hund = "Hundred";
+		if(n<1) {
+			System.out.println("not supported");
+		}else if(n<20) {
+			System.out.println(unit[n]);
+		}else if(n>20&&n<100) {
+			System.out.println(tens[te]+ unit[un]);
+		}else if (n>=100 && n<500) {
+			System.out.println(unit[hu]+hund+tens[te]+ unit[un]);
+		}
+	}
+	public void automorphic(int n) {
+		int sq =(n*n);
+		int div = sq%100;
+		if(div==n) {
+			System.out.println("Automorphic");
+		}
+	}
+	public void peterson(int n) {
+
+		int sum = 0;
+		int temp = n;
+		while(n>0) {
+			int fact = 1;
+			int rem = n%10;
+			for(int i=1;i<=rem;i++) {
+				fact = fact*i;
+			}n=n/10;
+			sum = sum+fact;
+		}System.out.println(sum);
+		if(temp==sum) {
+			System.out.println("peterson");
+		}
+	}
 	public void sunny(int n) {
 		int next = n+1;
 		for(int i = 1;i<n;i++) {
@@ -134,7 +138,7 @@ if(temp==sum) {
 		int b[] = new int [a.length];
 		for(int i=0;i<a.length;i++) {
 			b[i]= a[i];
-		System.out.print(b[i]+" ");
+			System.out.print(b[i]+" ");
 		}System.out.println();
 	}
 	public void frequency() {
@@ -142,40 +146,40 @@ if(temp==sum) {
 		int fre[] = new int[arr.length];
 		int visit = -1;
 		for(int i = 0;i<arr.length;i++) {
-			
+
 			int count = 1;
 			for(int j =i+1;j<arr.length;j++) {
-				
-		if(arr[i]==arr[j]) {
-		count++;
-		fre[j]=visit;
-		}
+
+				if(arr[i]==arr[j]) {
+					count++;
+					fre[j]=visit;
+				}
 			}if(fre[i]!=visit) {
 				fre[i]=count;
 			}
 		}
 		for(int i = 0;i<fre.length;i++) {
 			if(fre[i]!=visit) {
-			System.out.println(arr[i]+" frequecy "+fre[i]);
+				System.out.println(arr[i]+" frequecy "+fre[i]);
+			}
 		}
-		}
-		}
-	
+	}
+
 	public void leftrotation(int n) {
 		int []arr = {1,2,3,4,5};
-	for(int i=0;i<n;i++) {
-		int j ;
-		int f = arr[0];
-	for( j =0;j<arr.length-1;j++) {	
-		arr[j]= arr[j+1];
-		
-	}
-	arr[j]=f;
-	}
-	System.out.print("Left rotation: ");
-	for(int i = 0;i<arr.length;i++) {
-		System.out.print(arr[i]+" ");
-	}System.out.println();
+		for(int i=0;i<n;i++) {
+			int j ;
+			int f = arr[0];
+			for( j =0;j<arr.length-1;j++) {	
+				arr[j]= arr[j+1];
+
+			}
+			arr[j]=f;
+		}
+		System.out.print("Left rotation: ");
+		for(int i = 0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}System.out.println();
 	}
 	public void dupearr() {
 		int [] ar = {1,1,2,2,3,4,4,5,6};
@@ -201,49 +205,49 @@ if(temp==sum) {
 			}System.out.println("printing of matrix");
 		}
 	}
-public void  addmatrix() {
-	int a[][] = {{1,2,3},{3,2,1},{4,5,6}};
-	int b[][]= {{6,5,4},{1,2,3},{1,2,3}};
-	for(int i = 0;i<a.length;i++) {
-		for(int j = 0;j<a.length;j++) {
-			
+	public void  addmatrix() {
+		int a[][] = {{1,2,3},{3,2,1},{4,5,6}};
+		int b[][]= {{6,5,4},{1,2,3},{1,2,3}};
+		for(int i = 0;i<a.length;i++) {
+			for(int j = 0;j<a.length;j++) {
+
+			}
 		}
-	}
-	for(int i=0;i<b.length;i++) {
-		for(int j=0;j<b.length;j++) {
-			
+		for(int i=0;i<b.length;i++) {
+			for(int j=0;j<b.length;j++) {
+
+			}
 		}
-	}
-	int c[][]=new int[a.length][a.length];
-	for(int i=0;i<c.length;i++) {
-		for(int j =0;j<c.length;j++) {
-			c[i][j]=a[i][j]+b[i][j];
-			
+		int c[][]=new int[a.length][a.length];
+		for(int i=0;i<c.length;i++) {
+			for(int j =0;j<c.length;j++) {
+				c[i][j]=a[i][j]+b[i][j];
+
+			}
+		}for(int i =0;i<c.length;i++) {
+			for(int j=0;j<c.length;j++) {
+				System.out.print(c[i][j]+" ");
+			}System.out.println("Addition of matrix");
 		}
-	}for(int i =0;i<c.length;i++) {
-		for(int j=0;j<c.length;j++) {
-			System.out.print(c[i][j]+" ");
-		}System.out.println("Addition of matrix");
-	}
-}  
+	}  
 	public void diffmatrix() {
 		int a[][] = {{7,9,5},{3,2,4},{4,5,6}};
 		int b[][]= {{6,5,4},{1,2,3},{1,2,3}};
 		for(int i = 0;i<a.length;i++) {
 			for(int j = 0;j<a.length;j++) {
-				
+
 			}
 		}
 		for(int i=0;i<b.length;i++) {
 			for(int j=0;j<b.length;j++) {
-				
+
 			}
 		}
 		int c[][]=new int[a.length][a.length];
 		for(int i=0;i<c.length;i++) {
 			for(int j =0;j<c.length;j++) {
 				c[i][j]=a[i][j]-b[i][j];
-				
+
 			}
 		}for(int i =0;i<c.length;i++) {
 			for(int j=0;j<c.length;j++) {
@@ -256,19 +260,19 @@ public void  addmatrix() {
 		int b[][]= {{6,5,4},{1,2,3},{1,2,3}};
 		for(int i = 0;i<a.length;i++) {
 			for(int j = 0;j<a.length;j++) {
-				
+
 			}
 		}
 		for(int i=0;i<b.length;i++) {
 			for(int j=0;j<b.length;j++) {
-				
+
 			}
 		}
 		int c[][]=new int[a.length][a.length];
 		for(int i=0;i<c.length;i++) {
 			for(int j =0;j<c.length;j++) {
 				c[i][j]=a[i][j]*b[i][j];
-				
+
 			}
 		}for(int i =0;i<c.length;i++) {
 			for(int j=0;j<c.length;j++) {
@@ -280,27 +284,27 @@ public void  addmatrix() {
 		boolean flag = true;
 		for(int i = 0;i<n;i++) {
 			for(int j = 0;j<n;j++) {
-		if(a[i][j]!=b[i][j]) {
-			flag =false;
-		}
-		}
-			
+				if(a[i][j]!=b[i][j]) {
+					flag =false;
+				}
+			}
+
 		}if(flag) {
 			System.out.println("Elements are identical");
 		}else {
 			System.out.println("Not identical");
 		}
-	
+
 	}
 	public void totalchars() {
 		String a = "The best of both worlds";
-		
+
 		int no = 0;
 		for(int i = 0;i<a.length();i++) {
 			if(a.charAt(i)!=' ') {
-					no++;	
+				no++;	
 			}	
-			}System.out.println("total characters without spaces: "+no);
+		}System.out.println("total characters without spaces: "+no);
 	}
 	public void punctuationcount() {
 		String c = "Hi! how are you doing? All,well.,";
@@ -322,17 +326,17 @@ public void  addmatrix() {
 			if(a.charAt(i)!=' ') {
 				acount ++;
 			}
-			}
+		}
 		for(int i = 0;i<b.length();i++) {
 			if(b.charAt(i)!=' ') {
 				bcount ++;
 			}
-			}
+		}
 		abcount = acount+bcount;
 		System.out.println("A count: "+acount);
 		System.out.println("B count: "+bcount);
 		System.out.println("Total count: "+abcount);
-		}
+	}
 	public void vowconscount(String n) {
 		int vno = 0;
 		int cno = 0;
@@ -354,17 +358,17 @@ public void  addmatrix() {
 		if(a.length()!=b.length()) {
 			anagram = false;
 		}else {
-	 Arrays.sort(a1);
-	 Arrays.sort(b1);
-	 for(int i = 0; i <a.length();i++) {
-		 if(a1[i]==b1[i]) {
-			anagram = true;
-		 }
-	 }if(anagram) {
-		 System.out.println("anagram");
-	 }
+			Arrays.sort(a1);
+			Arrays.sort(b1);
+			for(int i = 0; i <a.length();i++) {
+				if(a1[i]==b1[i]) {
+					anagram = true;
+				}
+			}if(anagram) {
+				System.out.println("anagram");
+			}
 		}
-		}
+	}
 	public int LinearSearch(int arr[],int n) {
 		for(int i = 0;i<arr.length;i++) {
 			if(arr[i]==n) {
@@ -398,10 +402,10 @@ public void  addmatrix() {
 				}
 			}
 		}
-			
-	for(int ib:arr) {
-				System.out.print(ib+" ");
-	}		System.out.println();
+
+		for(int ib:arr) {
+			System.out.print(ib+" ");
+		}		System.out.println();
 	}
 	public void selection() {
 		int arr[]= {5,1,4,2,3};
@@ -413,14 +417,14 @@ public void  addmatrix() {
 					min = j;
 				}
 			}
-			 int temp = arr[min];
+			int temp = arr[min];
 			arr[min] = arr[i];
 			arr[i]= temp;
 		} for(int h:arr) {
 			System.out.print(h+" ");
 		}System.out.println();
-		}
-		
+	}
+
 	public void insert() {
 		int arr[] = {1,4,2,3,5};
 		System.out.println("insertion: ");
@@ -431,13 +435,14 @@ public void  addmatrix() {
 				arr[j+1]=arr[j];
 				j=j-1;
 			}
-				arr[j+1]= key;
-			
+			arr[j+1]= key;
+
 		}for(int k:arr) {
 			System.out.print(k+" ");
 		}System.out.println();
 	}
-	public void conversionString(String n) {
+	public void conversionString() {
+		String n = "123";
 		int a = Integer.parseInt(n);
 		int b = 150;
 		String h = String.valueOf(b);
@@ -447,7 +452,20 @@ public void  addmatrix() {
 		String i = String.valueOf(l);
 		String j = Long.toString(l);
 		float k = Float.parseFloat(n);
-		
+		String m = String.valueOf(k);
+		String s = "123.345";
+		double d = Double.parseDouble(s);
+		String d1 = String.valueOf(d);
+	Date date = Calendar.getInstance().getTime();
+	String dateform = date.toString();
+	String dateform1 = "12/12/2020";
+   try {
+	Date date1 = new SimpleDateFormat().parse(dateform1);
+} catch (ParseException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}	
+
 		System.out.println("Int: "+ a);
 		System.out.println("String: "+ h);
 		System.out.println("String: "+ g);
@@ -455,6 +473,8 @@ public void  addmatrix() {
 		System.out.println("String: "+ i);
 		System.out.println("String: "+ j);
 		System.out.println("Float: "+ k);
+		System.out.println("date "+dateform);
+		System.out.println("String "+dateform1);
 	}
 	public void spiralpattern() {
 		int n = 3;
@@ -466,25 +486,25 @@ public void  addmatrix() {
 		}
 	}
 	public void starpattern(int n) {
-	for(int i = 1;i<=n;i++) {
-		for(int j = n;j>=1;j--) {
-			if(j!=i) {
-				System.out.print(j+" ");
-			}else {
-				System.out.print("X"+" ");
-			}
-		}System.out.println("");
-	}
+		for(int i = 1;i<=n;i++) {
+			for(int j = n;j>=1;j--) {
+				if(j!=i) {
+					System.out.print(j+" ");
+				}else {
+					System.out.print("X"+" ");
+				}
+			}System.out.println("");
+		}
 	}
 	public void starpatterns(int n) {
 		int j ;
 		for(int i = 1;i<=n;i++) {
 			for( j = 1;j<=n;j++) {
-			if(i==j) {
-				System.out.print("*");
-			}else {
-				System.out.print("0");
-			}
+				if(i==j) {
+					System.out.print("*");
+				}else {
+					System.out.print("0");
+				}
 			}j--;
 			System.out.println("*");
 			while(j>1) {
@@ -493,18 +513,18 @@ public void  addmatrix() {
 				}else {
 					System.out.print("0");
 				}j--;
-				
+
 			}
-			}System.out.println(" ");
+		}System.out.println(" ");
 	}
 	public void pattern(int n) {
 		for(int i=1;i<=n;i++) {
 			for(int j = 1;j<=n;j++) {
 				System.out.print(i*j+" ");
 			}
-		System.out.println();
+			System.out.println();
 		}
-}
+	}
 	public void patterns(int n) {
 		int i,j;
 		for(i = 1;i<n;i++) {
@@ -528,250 +548,409 @@ public void  addmatrix() {
 				}
 				j--;
 			}
-		System.out.println("");
-	}
-		}
-public void Random() {
-	Random rd = new Random();
-	int a = rd.nextInt(5);
-	System.out.println(a);
-	int h = (int)Math.random();
-	System.out.println(h);
-}
-public void star() {
-	for(int i = 0;i<5;i++) {
-		for(int j = 0;j<i;j++) {
-			System.out.print("*");
-		}System.out.println();
-	}
-	for(int i = 5;i>+0;i--) {
-		for(int j =0;j<i;j++) {
-			System.out.print("*");
-		}System.out.println();
-	}
-	System.out.println();
-	for(int i = 0;i<5;i++) {
-		for(int j = 2*(5-i);j>0;j--) {
-			System.out.print(" ");
-		}
-		for(int j = 0;j<=i;j++) {
-			System.out.print("* ");
-		}System.out.println();
-	}System.out.println();
-	for(int i = 0;i<5;i++) {
-		for(int j=5-i;j>0;j--) {
-			System.out.print(" ");
-		}for(int j =0;j<=i;j++) {
-			System.out.print("* ");
-		}System.out.println();
-	}
-	
-}
-public void Technumber(int n) {
-	int digits = 0;
-	while(n>0) {
-		digits++;
-		n=n/10;
-	}
-	if(digits%2==0) {
-		int temp = n;
-		int f = temp%(int)Math.pow(10, digits/2);
-		int s = temp/(int)Math.pow(10, digits/2);
-		int sq = (f+s)*(f+s);
-		if(n==sq) {
-			System.out.println("Technumber");
+			System.out.println("");
 		}
 	}
-}
-public void reversearr() {
-	int ar[]= {1,2,3,4,5};
-	System.out.println("Original Array: ");
-	for(int i = 0;i<=ar.length-1;i++) {
-		System.out.print(ar[i]+" ");
+	public void Random() {
+		Random rd = new Random();
+		int a = rd.nextInt(5);
+		System.out.println(a);
+		int h = (int)Math.random();
+		System.out.println(h);
 	}
-	System.out.println();
-	System.out.println("Reverse Array: ");
-	for(int i=ar.length-1;i>=0;i--) {
-		System.out.print(ar[i]+" ");
-	}System.out.println();
-}
-public void Ascii(){
-	char a = 'A';
-	char b = 'B';
-	int ch1 = a;
-	int ch2 = b;
-	System.out.println(ch1+""+ch2+"");
-Integer c = ch1;
-Integer d = ch2;
-System.out.println(c.equals(d));
-}
-public static boolean Fascinating(int num) {
-	int [] freq = new int[10];
-	String res = num +""+num*2+""+num*3;
-	for(int i = 0;i<res.length();i++) {
-		int digit = res.charAt(i)-'0';
-		if(freq[digit]>0&&digit!=0) {
-			return false;
-		}else {
-			freq[digit]++;
+	public void star() {
+		for(int i = 0;i<5;i++) {
+			for(int j = 0;j<i;j++) {
+				System.out.print("*");
+			}System.out.println();
+		}
+		for(int i = 5;i>+0;i--) {
+			for(int j =0;j<i;j++) {
+				System.out.print("*");
+			}System.out.println();
+		}
+		System.out.println();
+		for(int i = 0;i<5;i++) {
+			for(int j = 2*(5-i);j>0;j--) {
+				System.out.print(" ");
+			}
+			for(int j = 0;j<=i;j++) {
+				System.out.print("* ");
+			}System.out.println();
+		}System.out.println();
+		for(int i = 0;i<5;i++) {
+			for(int j=5-i;j>0;j--) {
+				System.out.print(" ");
+			}for(int j =0;j<=i;j++) {
+				System.out.print("* ");
+			}System.out.println();
+		}
+
+	}
+	public void Technumber(int n) {
+		int digits = 0;
+		while(n>0) {
+			digits++;
+			n=n/10;
+		}
+		if(digits%2==0) {
+			int temp = n;
+			int f = temp%(int)Math.pow(10, digits/2);
+			int s = temp/(int)Math.pow(10, digits/2);
+			int sq = (f+s)*(f+s);
+			if(n==sq) {
+				System.out.println("Technumber");
+			}
 		}
 	}
+	public void reversearr() {
+		int ar[]= {1,2,3,4,5};
+		System.out.println("Original Array: ");
+		for(int i = 0;i<=ar.length-1;i++) {
+			System.out.print(ar[i]+" ");
+		}
+		System.out.println();
+		System.out.println("Reverse Array: ");
+		for(int i=ar.length-1;i>=0;i--) {
+			System.out.print(ar[i]+" ");
+		}System.out.println();
+	}
+	public void Ascii(){
+		char a = 'A';
+		char b = 'B';
+		int ch1 = a;
+		int ch2 = b;
+		System.out.println(ch1+""+ch2+"");
+		Integer c = ch1;
+		Integer d = ch2;
+		System.out.println(c.equals(d));
+	}
+	public static boolean Fascinating(int num) {
+		int [] freq = new int[10];
+		String res = num +""+num*2+""+num*3;
+		for(int i = 0;i<res.length();i++) {
+			int digit = res.charAt(i)-'0';
+			if(freq[digit]>0&&digit!=0) {
+				return false;
+			}else {
+				freq[digit]++;
+			}
+		}
 		for(int i=1;i<freq.length;i++) {
 			if(freq[i]==0) {
 				return false;
 			}
 		}
-			return true;	
+		return true;	
 	}
-public void keith(int n) {
-	int temp = n;
-	String h = Integer.toString(n);
-	int l = h.length();
-	int[]arr = new int[n];
-	int i; 
-	int sum;
-	for(i=l-1;i>=0;i--) {
-		arr[i]=temp%10;
-		temp = temp/10;
-	}
-	i =l;sum = 0;
-	while(sum<n) {
-		sum = 0;
-		for(int j =1;j<=l;j++) {
-			sum = sum+arr[i-j];
+	public void keith(int n) {
+		int temp = n;
+		String h = Integer.toString(n);
+		int l = h.length();
+		int[]arr = new int[n];
+		int i; 
+		int sum;
+		for(i=l-1;i>=0;i--) {
+			arr[i]=temp%10;
+			temp = temp/10;
 		}
-		arr[i]=sum;
-		i++;
+		i =l;sum = 0;
+		while(sum<n) {
+			sum = 0;
+			for(int j =1;j<=l;j++) {
+				sum = sum+arr[i-j];
+			}
+			arr[i]=sum;
+			i++;
+		}
+		if(sum==n) {
+			System.out.println("keith");
+		}
 	}
-	if(sum==n) {
-		System.out.println("keith");
+	public void neon(int n) {
+		int sq = n*n;
+		int sum=0;
+		while (sq!=0) {
+			int rev = sq%10;
+			sum = sum+rev;
+			sq = sq/10;
+		}if(n==sum) {
+			System.out.println(n+" neon");
+		}
 	}
-}
-public void neon(int n) {
-	int sq = n*n;
-	int sum=0;
-	while (sq!=0) {
-		int rev = sq%10;
-		sum = sum+rev;
-		sq = sq/10;
-	}if(n==sum) {
-		System.out.println(n+" neon");
+	public void spynum(int n) {
+		int sum=0;
+		int product=1;
+		int temp = n;
+		while(temp>0) {
+			int rem = temp%10;
+			sum = sum+rem;
+			product = product*rem;
+			temp = temp/10;
+		}if(sum==product) {
+			System.out.println(n+" is spy number");
+		}
 	}
-}
-public void spynum(int n) {
-	int sum=0;
-	int product=1;
-	int temp = n;
-	while(temp>0) {
-		int rem = temp%10;
-		sum = sum+rem;
-		product = product*rem;
-		temp = temp/10;
-	}if(sum==product) {
-		System.out.println(n+" is spy number");
+	public void oddevenarray() {
+		int []arr = {1,2,3,4,5,6};
+		for(int i =0;i<arr.length;i=i+2) {
+			System.out.print("even position "+arr[i]);
+		}System.out.println();
+		for(int i =1;i<arr.length;i+=2) {
+			System.out.print("odd position "+arr[i]);
+		}System.out.println();
 	}
-}
-public void oddevenarray() {
-	int []arr = {1,2,3,4,5,6};
-	for(int i =0;i<arr.length;i=i+2) {
-		System.out.print("even position "+arr[i]);
-	}System.out.println();
-	for(int i =1;i<arr.length;i+=2) {
-		System.out.print("odd position "+arr[i]);
-	}System.out.println();
-}
-public void largest() {
-	int[]arr = {10,30,22,45,90,21,2};
-	int largest = arr[0];
-	int smallest=arr[0];
-  for(int i =0;i<arr.length;i++) {
-	  if(arr[i]>largest) {
-		  largest=arr[i];
-	  }
-	  if(arr[i]<smallest) {
-		smallest =arr[i];
-	  }
-  }System.out.println("Largest no is "+largest);
-System.out.println("smallest is "+smallest);
-}
-public void triangular() {
-	int arr[][]= {{1,2,3},{8,6,4},{4,5,6}};
-	int rows = arr.length;
-	int cols = arr[0].length;
-	if(rows!=cols) {
-		System.out.println("should be sq");
-	}else {
-		for(int i = 0;i<rows;i++) {
-			for(int j=0;j<cols;j++) {
-				if(j>i) {
-					System.out.print(0+" ");
+	public void largest() {
+		int[]arr = {10,30,22,45,90,21,2};
+		int largest = arr[0];
+		int smallest=arr[0];
+		for(int i =0;i<arr.length;i++) {
+			if(arr[i]>largest) {
+				largest=arr[i];
+			}
+			if(arr[i]<smallest) {
+				smallest =arr[i];
+			}
+		}System.out.println("Largest no is "+largest);
+		System.out.println("smallest is "+smallest);
+	}
+	public void triangular() {
+		int arr[][]= {{1,2,3},{8,6,4},{4,5,6}};
+		int rows = arr.length;
+		int cols = arr[0].length;
+		if(rows!=cols) {
+			System.out.println("should be sq");
+		}else {
+			for(int i = 0;i<rows;i++) {
+				for(int j=0;j<cols;j++) {
+					if(j>i) {
+						System.out.print(0+" ");
+					}else {
+						System.out.print(arr[i][j]+" ");
+					}
+				}System.out.println();
+			}
+		}
+	}
+	public void uptrian() {
+		int arr[][]= {{1,2,3},{8,6,4},{4,5,6}};
+		int rows = arr.length;
+		int col = arr[0].length;
+		if(rows!=col) {
+			System.out.println("error in input");
+		}else {
+			for(int i =0;i<rows;i++) {
+				for(int j =0;j<col;j++) {
+					if(i>j) {
+						System.out.print(0+" ");
+					}else {
+						System.out.print(arr[i][j]+" ");
+					}
+				}System.out.println();
+			}
+		}
+	}
+	public void frequencyoddeven() {
+		int arr[][] = {{1,2,3},{4,5,6},{7,8,9}};
+		int even = 0;
+		int odd = 0;
+		int rows = arr.length;
+		int col = arr[0].length;
+		for(int i=0;i<rows;i++) {
+			for(int j=0;j<col;j++) {
+				if(arr[i][j]%2==0) {
+					even ++;
 				}else {
-					System.out.print(arr[i][j]+" ");
+					odd++;
 				}
-			}System.out.println();
+			}
+		}System.out.println("Frequency of even is "+even+" and odd is "+ odd);
+	}
+	public void productmatrix() {
+		int arr[][]= {{1,3,2},{3,1,1},{1,2,2}};
+		int are[][]= {{2,1,1},{1,0,1},{1,3,1}};
+		int row1 = arr.length;
+		int col1 = arr[0].length;
+		int row2 = are.length;
+		int col2= are[0].length;
+		if(row1!=col2) {
+			System.out.println("error in input");
+		}else {
+			int prod[][]= new int[row1][col2];
+			for(int i=0;i<row1;i++) {
+				for(int j=0;j<col2;j++) {
+					for(int k=0;k<row2;k++) {
+					prod[i][j]=prod[i][j]+arr[i][k]*are[k][j];	
+					}
+				}
+			}for(int i=0;i<row1;i++) {
+				for(int j =0;j<col2;j++) {
+					System.out.print(prod[i][j]+" ");
+				}System.out.println();
+			}
 		}
 	}
-}
+	public void rowcolsum() {
+		int arr[][]= {{1,2,3},{4,5,6},{7,8,9}};
+		int row = arr.length;
+		int col = arr[0].length;
+		int rowsum=0;
+		int colsum=0;
+		for(int i=0;i<row;i++) {
+			for(int j=0;j<col;j++) {
+				rowsum=rowsum+arr[i][j];
+			} System.out.println("row sum for "+(i+1)+" = "+rowsum);
+		}
+		for(int i=0;i<col;i++) {
+			for(int j=0;j<row;j++) {
+				colsum=colsum+arr[j][i];
+			}System.out.println("col sum for "+(i+1)+" = "+colsum);
+		}
+	}
+	public void Npartssring() {
+		String a="aaaabbbbccccdddd";
+		int n=4;
+		int temp=0;
+		int len = a.length();
+		int chars = len/n;
+		String[]arr= new String[n];
+		if(len%n!=0) {
+			System.out.println("error , cant divide");
+		}else {
+			for(int i=0;i<len;i=i+chars) {
+				String part = a.substring(i,i+ chars);
+		 arr[temp] = part;
+			temp++;
+			}System.out.println("equal parts are :");
+		}
+		for(int i=0;i<arr.length;i++) {
+			System.out.println(arr[i]);
+		}
+	}
+	public void substrings() {
+		String a = "AND";
+		int len = a.length();
+		int temp=0;
+		String []s = new String[len*(len+1)/2];
+		for(int i=0;i<len;i++) {
+			for(int j=i;j<len;j++) {
+			s[temp]=a.substring(i,j+1);
+			temp++;
+			}
+		}for(int i =0;i<s.length-1;i++) {
+			System.out.println( s[i]);
+		}
+	}
+	public int longestsubseq() {
+		String a = "AABBCSDBAB";
+		int l = a.length();
+		int [][]h =new int[l+1][l+1];
+		for(int i=1;i<=l;i++) {
+			for(int j=1;j<=l;j++) {
+				if(a.charAt(i-1)==a.charAt(j-1)&&i!=j) {
+					h[i][j]=1+h[i-1][j-1];
+				}else {
+				  h[i][j]=Math.max(h[i][j-1],h[i-1][j]);
+				}
+			}
+		}
+		return h[l][l];
+	}
+	
+	public void permute(String b,int l,int r) {
+		if(l==r) {
+			System.out.println(b);
+		}else {
+			for(int i=l;i<=r;i++) {
+				b=swap(b,l,i);
+				permute(b,l+1,r);
+				b=swap(b,l,i);
+			}
+		}
+	}
+	public String swap(String a, int i, int j) {
+		char temp;
+		char[]ch = a.toCharArray();
+		temp=ch[i];
+		ch[i]=ch[j];
+		ch[j]=temp;
+		return String.valueOf(ch);
+	}
+	public void whitespace() {
+		String a="This is a String";
+		String b = a.replaceAll(" ","");
+		System.out.println(b);
+	}
+	
 	public static void main(String[] args) {
-Scenariosjpoint jp = new Scenariosjpoint();
-jp.fibonnaci(4);
-jp.primenumber(9);
-jp.primenumber(6);
-jp.prime(5);
-jp.palindrome(121);
-jp.factorial(4);
-jp.Armstrong(153);
-jp.reverse(123);
-jp.numbertoword(199);
-jp.automorphic(25);
-jp.peterson(145);
-jp.sunny(80);
-jp.copyarray();
-jp.frequency();
-jp.leftrotation(2);
-jp.dupearr();
-jp.printelements();
-jp.matrix();	
-jp.addmatrix();	
-jp.diffmatrix();	
-jp.multimatrix();
-int a[][] = {{1,2,3},{3,2,1},{4,5,6}};
-int b[][]= {{1,2,3},{3,2,1},{4,5,6}};
-int n = a.length;
-jp.compare(a, b, n);
-jp.totalchars();
-jp.punctuationcount();
-jp.chars2strings();
-jp.vowconscount("This is a String");
-jp.anagram();
-jp.bubble();
-jp.selection();
-jp.insert();
-jp.conversionString("123");
-jp.spiralpattern();
-jp.starpattern(5);
-jp.starpatterns(5);
-jp.pattern(4);
-jp.patterns(6);
-jp.Random();
-jp.star();
-jp.Technumber(2025);
-jp.reversearr();
-jp.Ascii();
-
-int arr[]= {1,2,3,4};
-int s = 3;
-System.out.println("the number "+s+" is at "+jp.LinearSearch(arr, s));
-System.out.println("the number "+ s+" is at "+jp.BinarySearch(arr, 0, arr.length-1, s));
-boolean ans = Fascinating(192);
-if(ans) {
-	System.out.println("is fascinating");
-}
-jp.keith(75);
-jp.neon(9);
-jp.spynum(123);
-jp.oddevenarray();
-jp.largest();
-jp.triangular();
+		Scenariosjpoint jp = new Scenariosjpoint();
+		jp.fibonnaci(4);
+		jp.primenumber(9);
+		jp.primenumber(6);
+		jp.prime(5);
+		jp.palindrome(121);
+		jp.factorial(4);
+		jp.Armstrong(153);
+		jp.reverse(123);
+		jp.numbertoword(199);
+		jp.automorphic(25);
+		jp.peterson(145);
+		jp.sunny(80);
+		jp.copyarray();
+		jp.frequency();
+		jp.leftrotation(2);
+		jp.dupearr();
+		jp.printelements();
+		jp.matrix();	
+		jp.addmatrix();	
+		jp.diffmatrix();	
+		jp.multimatrix();
+		int a[][] = {{1,2,3},{3,2,1},{4,5,6}};
+		int b[][]= {{1,2,3},{3,2,1},{4,5,6}};
+		int n = a.length;
+		jp.compare(a, b, n);
+		jp.totalchars();
+		jp.punctuationcount();
+		jp.chars2strings();
+		jp.vowconscount("This is a String");
+		jp.anagram();
+		jp.bubble();
+		jp.selection();
+		jp.insert();
+		jp.conversionString();
+		jp.spiralpattern();
+		jp.starpattern(5);
+		jp.starpatterns(5);
+		jp.pattern(4);
+		jp.patterns(6);
+		jp.Random();
+		jp.star();
+		jp.Technumber(2025);
+		jp.reversearr();
+		jp.Ascii();
+		jp.frequencyoddeven();
+		int arr[]= {1,2,3,4};
+		int s = 3;
+		System.out.println("the number "+s+" is at "+jp.LinearSearch(arr, s));
+		System.out.println("the number "+ s+" is at "+jp.BinarySearch(arr, 0, arr.length-1, s));
+		boolean ans = Fascinating(192);
+		if(ans) {
+			System.out.println("is fascinating");
+		} jp.substrings();
+		jp.keith(75);
+		jp.neon(9);
+		jp.spynum(123);
+		jp.oddevenarray();
+		jp.largest();
+		jp.triangular();
+		jp.uptrian();
+		jp.productmatrix();
+		jp.rowcolsum();
+		jp.Npartssring();
+		System.out.println("longest rpeating sequence is "+jp.longestsubseq());
+	String st = "ABC";
+	int no=st.length();
+	jp.permute(st, 0, no-1);
+	jp.whitespace();
 	}
 }
