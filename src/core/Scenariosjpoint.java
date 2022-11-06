@@ -456,15 +456,15 @@ public class Scenariosjpoint {
 		String s = "123.345";
 		double d = Double.parseDouble(s);
 		String d1 = String.valueOf(d);
-	Date date = Calendar.getInstance().getTime();
-	String dateform = date.toString();
-	String dateform1 = "12/12/2020";
-   try {
-	Date date1 = new SimpleDateFormat().parse(dateform1);
-} catch (ParseException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}	
+		Date date = Calendar.getInstance().getTime();
+		String dateform = date.toString();
+		String dateform1 = "12/12/2020";
+		try {
+			Date date1 = new SimpleDateFormat().parse(dateform1);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 
 		System.out.println("Int: "+ a);
 		System.out.println("String: "+ h);
@@ -780,7 +780,7 @@ public class Scenariosjpoint {
 			for(int i=0;i<row1;i++) {
 				for(int j=0;j<col2;j++) {
 					for(int k=0;k<row2;k++) {
-					prod[i][j]=prod[i][j]+arr[i][k]*are[k][j];	
+						prod[i][j]=prod[i][j]+arr[i][k]*are[k][j];	
 					}
 				}
 			}for(int i=0;i<row1;i++) {
@@ -819,8 +819,8 @@ public class Scenariosjpoint {
 		}else {
 			for(int i=0;i<len;i=i+chars) {
 				String part = a.substring(i,i+ chars);
-		 arr[temp] = part;
-			temp++;
+				arr[temp] = part;
+				temp++;
 			}System.out.println("equal parts are :");
 		}
 		for(int i=0;i<arr.length;i++) {
@@ -834,8 +834,8 @@ public class Scenariosjpoint {
 		String []s = new String[len*(len+1)/2];
 		for(int i=0;i<len;i++) {
 			for(int j=i;j<len;j++) {
-			s[temp]=a.substring(i,j+1);
-			temp++;
+				s[temp]=a.substring(i,j+1);
+				temp++;
 			}
 		}for(int i =0;i<s.length-1;i++) {
 			System.out.println( s[i]);
@@ -850,13 +850,13 @@ public class Scenariosjpoint {
 				if(a.charAt(i-1)==a.charAt(j-1)&&i!=j) {
 					h[i][j]=1+h[i-1][j-1];
 				}else {
-				  h[i][j]=Math.max(h[i][j-1],h[i-1][j]);
+					h[i][j]=Math.max(h[i][j-1],h[i-1][j]);
 				}
 			}
 		}
 		return h[l][l];
 	}
-	
+
 	public void permute(String b,int l,int r) {
 		if(l==r) {
 			System.out.println(b);
@@ -881,7 +881,408 @@ public class Scenariosjpoint {
 		String b = a.replaceAll(" ","");
 		System.out.println(b);
 	}
-	
+	public void Autographic() {
+		int n = 21200;
+		String a = Integer.toString(n);
+		int number = a.length();
+		int sum = 0;
+		while(n>0) {
+			int rev = n%10;
+			sum+=rev;
+			n=n/10;
+		}if(sum==number) {
+			System.out.println("Autographic");
+		}
+	}
+	public boolean isPrime(int n) {
+		for(int i=2;i<n;i++) {
+			if( n%i==0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public boolean isRev(int n) {
+		if(isPrime(n)==false) {
+			return false;
+		}int rem = 0;
+		int rev = 0;
+		while(n>0) {
+			rem = n%10;
+			rev = rev*10+rem;
+			n=n/10;
+		}
+		return isPrime(rev);
+	}
+	public void Buzz(int n) {
+		int temp = n;
+		int rem = temp%10;
+		if(n%7==0||rem==7) {
+			System.out.println("Buzz");
+		}
+	}
+	public void sumarray() {
+		int arr[]= {1,2,3,4,5};
+		int sum=0;
+		for(int i =0;i<arr.length;i++) {
+			sum+=arr[i];
+		}System.out.println(sum);
+	}
+	public void Rightrotation() {
+		int arr[]= new int[]{1,2,3,4,5};
+		int n = 3;
+
+		for(int i=0;i<n;i++) {
+			int j,last;
+			last = arr[arr.length-1];
+			for(j=arr.length-1;j>0;j--) {
+				arr[j]=arr[j-1];
+			}
+			arr[0]=last;
+			System.out.println();
+		}
+
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}System.out.println();
+	}
+	public void ascend() {
+		int arr[]= {1,4,2,3,5};
+		for(int i=0;i<arr.length-1;i++) {
+			if(arr[i]>arr[i+1]) {
+				int temp = arr[i];
+				arr[i]=arr[i+1];
+				arr[i+1]=temp;
+			}
+		}
+		for(int j=0;j<arr.length;j++) {
+			System.out.print(arr[j]);
+		}System.out.println();
+		for(int j=arr.length-1;j>=0;j--) {
+			System.out.print(arr[j]);
+		}System.out.println();
+	}
+	public void Transpose() {
+		int arr[][]= {{1,2,3},{4,5,6},{7,8,9}};
+		int row = arr.length;
+		int col = arr[0].length;
+		int t[][]= new int[col][row];
+		for(int i=0;i<col;i++) {
+			for(int j=0;j<row;j++) {
+				t[i][j]=arr[j][i];
+			}
+		}for(int i=0;i<col;i++) {
+			for(int j=0;j<row;j++) {
+				System.out.print(t[i][j]+" ");
+			}System.out.println();
+		}
+	}
+	public void identitymatrix() {
+		boolean flag = true;
+		int matrix[][]= {{1,0,0},{0,1,0},{0,0,1}};
+		int row = matrix.length;
+		int col = matrix[0].length;
+		if(row!=col) {
+			System.out.println("error in matrix");
+		}else {
+			for(int i=0;i<row;i++) {
+				for(int j=0;j<col;j++) {
+					if(i==j&&matrix[i][j]!=1) {
+						flag=false;
+						break;
+					}
+					if(i!=j&&matrix[i][j]!=0) {
+						flag = false;
+						break;
+					}
+				}
+			}
+			if(flag) {
+				System.out.println("given matrix is identity");
+			}
+		}
+	}
+	public void Sparsematrix() {
+		int a[][]= {{4,0,0},{0,5,0},{0,0,6}};
+		int count = 0;
+		int row = a.length;
+		int col = a[0].length;
+		int size = row*col;
+		for(int i=0;i<row;i++) {
+			for(int j=0;j<col;j++) {
+				if(a[i][j]==0) {
+					count++;
+				}
+			}
+		}
+		if(count>size/2) {
+			System.out.println("yes");
+		}
+	}
+	public void Stringprog() {
+		String s = "Great Power";
+		StringBuffer buff = new StringBuffer(s);
+		for(int i=0;i<s.length();i++) {
+			if(Character.isUpperCase(s.charAt(i))) {
+				buff.setCharAt(i,Character.toLowerCase(s.charAt(i)));
+			}else if(Character.isLowerCase(s.charAt(i))) {
+				buff.setCharAt(i,Character.toUpperCase(s.charAt(i)));	
+			}
+		}
+		System.out.println("New conversion is "+buff);
+		String ss = s.replace(" ", "*");
+		System.out.println(ss);
+	}
+	public boolean Duck(int n) {
+
+		while(n!=0) {
+			if(n%10==0){
+				return true;
+			}n=n/10;
+		}
+		return false;
+	}
+	public int Krishnamurthy(int n) {
+		int f=1;
+		while(n!=0) {
+			f=f*n;
+			n--;
+		}
+		return f;
+	}
+	public boolean digitfact(int n) {
+		int temp=n;
+		int sum=0;
+		while(temp!=0) {
+			sum+=Krishnamurthy(temp%10);
+			temp=temp/10;
+		}
+		return (sum==n);
+	}
+	public boolean  increasing(int n) {
+		boolean flag = true;
+		String g = String.valueOf(n);
+		char digit;
+		for(int i = 0;i<g.length()-1;i++) {
+			digit = g.charAt(i);
+			if(digit>g.charAt(i+1)) {
+				flag = false;
+				break;
+			}
+
+		}
+		return flag;
+	}
+	public boolean  decreasing(int n) {
+		boolean flag = true;
+		String g = String.valueOf(n);
+		char digit;
+		for(int i = 0;i<g.length()-1;i++) {
+			digit = g.charAt(i);
+		 	if(digit<g.charAt(i+1)) {
+				flag = false;
+				break;
+			}
+
+		}
+		return flag;
+	}
+	public static int rever(int n) {
+		String l=" ";
+		String g = Integer.toString(n);
+		for(int k =g.length()-1;k>=0;k--) {
+			l = l +g.charAt(k);
+		}
+		int rev = Integer.parseInt(g);
+		return rev;
+	}
+	public void Mystery(int n) {
+		for(int i =1;i<=n/2;i++) {
+			int j = rever(i);
+			if(i+j==n) {
+				System.out.println("Mystery"+n+" "+i+" "+j);
+			}
+		}
+	}
+	public void Thirdmax() {
+		int arr[]= {1,5,6,10,9,7,4,3,13,15};
+		Arrays.sort(arr);
+		int l = arr.length;
+		int min = arr[0];
+		int max = arr[0];
+		System.out.println("Third largest number is "+arr[l-3]);
+		System.out.println("Second largest number is "+arr[l-2]);
+		System.out.println("Largest number is "+arr[l-1]);
+		for(int i=0;i<l;i++) {
+			if(arr[i]<min) {
+				min = arr[i];
+			}if(arr[i]>max) {
+				max = arr[i];
+			}
+		}System.out.println("Min is "+ min+" Max is "+max);
+	}
+	public static int removedupes(int []ar,int n) {
+		if(n==0||n==1) {
+			return n;
+		}int temp[]= new int [n];
+		int j = 0;
+		for(int i=0;i<n-1;i++) {
+			if(ar[i]!=ar[i+1]) {
+				temp[j++]=ar[i];
+			}
+		}temp[j++]=ar[n-1];
+		for(int i=0;i<j;i++) {
+			ar[i]=temp[i];
+		}
+		return j;
+	}
+	public void evenoedd() {
+		int arr[]= {1,2,3,4,5,6};
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]%2==0) {
+				System.out.println("even: "+arr[i]);
+			}else {
+				System.out.println("odd: "+arr[i]);
+			}
+		}
+	}
+	public void strpalindrome(String n) {
+		for(int i = 0;i<n.length()-1/2;i++) {
+			if(n.charAt(i)!=n.charAt(n.length()-1-i)) {
+				System.out.println("not palindrome");
+			}
+		}
+	}
+	public void rotatestring() {
+		String a = "abcde";
+		String b = "deabc";
+		
+		 if(a.length()!=b.length()) {
+			 System.out.println("Error in input");
+		 }else {
+			 String c = a.concat(a);
+			 if(c.contains(b)) {
+				 System.out.println("Rotation found");
+			 }
+		 }
+	}
+	public void Maxminocc() {
+		String n = "The grass is greener ";
+		int fre[]= new int[n.length()];
+		char minch = n.charAt(0);
+		char maxch = n.charAt(0);
+		int i ,j,min,max;
+		char[]chst=n.toCharArray();
+		for(i=0;i<chst.length;i++) {
+			fre[i]=1;
+			for(j=i+1;j<chst.length;j++) {
+				if(chst[i]==chst[j]&&chst[i]!=' '&&chst[i]!='0') {
+					fre[i]++;
+					chst[j]='0';
+				}
+			}
+		}
+		min=max=fre[0];
+		for(i=0;i<fre.length;i++) {
+			if(min>fre[i]&&fre[i]!='0') {
+				min=fre[i];
+				minch=chst[i];
+			}
+			if(max<fre[i]&&fre[i]!='0') {
+				max=fre[i];
+				maxch=chst[i];
+			}
+		}
+		System.out.println("Max char "+maxch+" "+max);
+		System.out.println("Min char "+minch+" "+min);
+	}
+public void Revstring() {
+	String a = "Dinosaur is a big animal";
+	String rev = " ";
+	for(int i=a.length()-1;i>=0;i--) {
+		rev = rev+a.charAt(i);
+	}System.out.println(rev);
+}
+public void dupchar() {
+	String st="Dinosaur is a big animal";
+	int count ;
+	char[] ch = st.toCharArray();
+	System.out.println("Duplicate elements: ");
+	for(int i=0;i<ch.length;i++) {
+		count=1;
+		for(int j=i+1;j<ch.length;j++) {
+			if(ch[i]==ch[j]&&ch[i]!=' ') {
+				count++;
+				ch[j]='0';
+			}
+		}
+		if(count>1&&ch[i]!='0') {
+			System.out.print(ch[i]+" ");
+		}
+	}System.out.println();
+}
+public void dupestr() {
+	String st = "Big black big butter big";
+	int count;
+	String[] word = st.split(" ");
+	System.out.println("Duplicate :");
+	for(int i=0;i<word.length;i++) {
+		count = 1;
+		for(int j = i+1;j<word.length;j++) {
+			if(word[i].equals(word[j])){
+				count++;
+				word[j]="0";
+			}
+		}if(count>1&&word[i]!="0") {
+			System.out.println(word[i]);
+		}
+	}
+}
+public void freqchars() {
+	String st = "picture perfect";
+	int fre[]= new int[st.length()];
+	int i,j;
+ char[] ch = st.toCharArray();
+ for( i=0;i<ch.length;i++) {
+	 fre[i]=1;
+	 for(j=i+1;j<ch.length;j++) {
+		 if(ch[i]==ch[j]) {
+			 fre[i]++;
+			 ch[j]='0';
+			 
+		 }
+	 }
+ }System.out.println("Freq: ");
+ for(i=0;i<fre.length;i++) {
+	 if(ch[i]!=' '&&ch[i]!='0') {
+		 System.out.println(ch[i]+" - "+fre[i]);
+	 }
+ }
+}
+public void smallarge() {
+	String st = "Hard work is Hardwork";
+	String word = "",small="",large="";
+	String[] words= new String[100];
+	int length=0;
+	st = st+" ";
+	for(int i=0;i<st.length();i++) {
+		if(st.charAt(i)!=' ') {
+			word = word+st.charAt(i);
+		}else {
+			words[length]=word;
+			length++;
+			word="";
+		}
+	}small = large=words[0];
+	for(int k = 0;k<length;k++) {
+		if(small.length()>words[k].length()) {
+			small = words[k];
+		}if(large.length()<words[k].length()) {
+			large=words[k];
+		}
+	}System.out.println("Small: "+small);
+	System.out.println("Large: "+large);
+}
 	public static void main(String[] args) {
 		Scenariosjpoint jp = new Scenariosjpoint();
 		jp.fibonnaci(4);
@@ -917,7 +1318,7 @@ public class Scenariosjpoint {
 		jp.bubble();
 		jp.selection();
 		jp.insert();
-		jp.conversionString();
+		//jp.conversionString();
 		jp.spiralpattern();
 		jp.starpattern(5);
 		jp.starpatterns(5);
@@ -948,9 +1349,53 @@ public class Scenariosjpoint {
 		jp.rowcolsum();
 		jp.Npartssring();
 		System.out.println("longest rpeating sequence is "+jp.longestsubseq());
-	String st = "ABC";
-	int no=st.length();
-	jp.permute(st, 0, no-1);
-	jp.whitespace();
+		String st = "ABC";
+		int no=st.length();
+		jp.permute(st, 0, no-1);
+		jp.whitespace();
+		jp.Autographic();
+		int num = 79;
+		if(jp.isRev(num)) {
+			System.out.println("Emrip number ");
+		}
+		jp.Buzz(42);
+		jp.sumarray();
+		jp.Rightrotation();
+		jp.ascend();
+		jp.Transpose();
+		jp.identitymatrix();
+		jp.Sparsematrix();
+		jp.Stringprog();
+		jp.Thirdmax();
+		jp.Mystery(154);
+		num = 1020;
+		if(jp.Duck(num)) {
+			System.out.println(num + " IS duck No.");
+		} int nu=145;
+		if(jp.digitfact(nu)) {
+			System.out.println("Krishnamurthy number");
+		}
+		int nom=1231;
+		if(jp.increasing(nom)||jp.decreasing(nom)||nom<101) {
+			System.out.println("not bouncy");
+		}else {
+			System.out.println("bouncy");
+		}
+	 int ar[]= {1,2,1,2,3,4,5,1,9};
+	 Arrays.sort(ar);
+	 int len = ar.length;
+	 len = jp.removedupes(ar, len);
+	 for(int i=0;i<len;i++) {
+		 System.out.print(ar[i]+" ");
+	 }
+	 jp.evenoedd();
+	 jp.strpalindrome("madam");
+	 jp.rotatestring();
+	 jp.Maxminocc();
+	 jp.Revstring();
+	 jp.dupchar();
+	 jp.dupestr();
+	 jp.freqchars();
+	 jp.smallarge();
 	}
 }

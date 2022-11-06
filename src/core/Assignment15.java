@@ -30,8 +30,29 @@ import java.util.concurrent.TimeUnit;
  memory location wheras .equals evaluates to comare values in objects
  */
 
-public class Assignment15 {
+/*
+ In Java 8, a new notion called functional interfaces was introduced. A Functional Interface
+  is an interface that has exactly one abstract method. To designate an interface as a 
+  Functional Interface, we don’t need to use the @FunctionalInterface annotation.
+  In Java 8, the Java.lang interface now supports a “forEach” function. Iterable that can 
+  iterate over the collection’s items. The Iterable interface has a default method called 
+  “forEach.” Collection classes use it to iterate items, which extends the Iterable interface.
+ The Stream API is used to handle a collection of items and allows many iterations. A Stream 
+ is a collection of items (elements) that enables you to combine multiple techniques to 
+ achieve your goals.
+ Under the package java.time, Java 8 offers a new date-time API. The following are the most 
+ prominent classes among them:
+    Local: Simplified date-time API with no timezone management complexity.
+    Zoned: specialized date-time API that can handle several time zones.
+    
+ */
 
+public class Assignment15 {
+public static class innerclass{
+	public void print() {
+		System.out.println("Inner");
+	}
+}
 	public void Area(String area) {
 	//String [] areas = {"Hyd","Vja","Mumbai"};
 	//for(String h:areas) {
@@ -126,6 +147,8 @@ public class Assignment15 {
 		h.start();
 		t.start();
 		Assignment15 as =new Assignment15();
+		innerclass in = new innerclass();
+		in.print();
 	Scanner sc=new Scanner(System.in);
 	System.out.println("Select an Area ");
 	as.Area(sc.nextLine());
